@@ -1,7 +1,14 @@
-<h2><%= @article.title %></h2>
+<h2>Title:</h2>
+<p>
+  <%= @article.title %>
+</p>
 
-<%= @article.body %>
+<p>
+  <%= @article.body %>
+</p>
 
-<div>
-  <%= link_to "Back", articles_path %>
-</div>
+<h3>Comments:</h3>
+<%= render @article.comments %>
+
+<h4>Add a comment</h4>
+<%= render "comments/form", article: @article%>
