@@ -9,8 +9,18 @@ Rails.application.routes.draw do
     #get '/articles/:id/edit', to: 'articles#edit', as: :edit_article
     #patch '/articles/:id', to: 'articles#update'
     #delete '/articles/:id', to: 'articles#destroy'
-  # Lines 5-11 can be replaced with the line 14 below
-  resources :articles do
-    resources :comments
-  end 
+  # The 7 lines above can be replaced with resources :articles
+  devise_scope :user do
+    post '/users/sign_up', to: 'devise/registrations#create', as: :new_user_reg
+  end
+  devise_for :users
+
+  resources :users do
+    resources :articles do
+      resources :comments
+    end
+  end
+
+  get '/help', to: 'static_pages#help'
+  get '/about', to: 'static_pages#about'
 end

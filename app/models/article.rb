@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  belongs_to :user
   # dependent: :destroy is used to avoid the foreign key constraint error
   # This allows for all comments tied to an article to be destroyed as the article is deleted
   has_many :comments, dependent: :destroy

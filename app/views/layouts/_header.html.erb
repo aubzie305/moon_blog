@@ -1,0 +1,14 @@
+<header class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <%= link_to "Moon Moon", root_path, id: "logo" %>
+    <%= link_to image_tag("moon_logo", alt: "Moon Blog Logo", width: "50", id: "logo_pic"), root_path%>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Help", help_path %></li>
+        <li><%= link_to "Log in", user_session_path %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
