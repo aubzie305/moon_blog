@@ -1,0 +1,11 @@
+<h3>Moon Feed</h3>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, '#' %>
+      <%#= link_to "Edit", '#' %>
+      <%#= link_to "Delete", '#', method: :delete, 
+          data: {confirm: "Are you sure you want to delete this article?"} %>
+    </li>
+  <% end %>
+</ul>

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
+  get '/goodbye', to: 'static_pages#goodbye'
 
   get '/user_profile', to: 'users#profile', as: :user_profile
 end
