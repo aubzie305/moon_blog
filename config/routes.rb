@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  #get '/articles', to: 'articles#index'
-  root 'articles#index'
+  root 'static_pages#home'
     #get '/articles', to: 'articles#index'
     #get '/articles/new', to: 'articles#new', as: :new_article
     #get '/articles/:id', to: 'articles#show', as: :article
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
     #get '/articles/:id/edit', to: 'articles#edit', as: :edit_article
     #patch '/articles/:id', to: 'articles#update'
     #delete '/articles/:id', to: 'articles#destroy'
-  # The 7 lines above can be replaced with resources :articles
+    # The 7 lines above can be replaced with resources :articles
   devise_scope :user do
     post '/users/sign_up', to: 'devise/registrations#create', as: :new_user_reg
   end
@@ -23,4 +22,6 @@ Rails.application.routes.draw do
 
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
+
+  get '/user_profile', to: 'users#profile', as: :user_profile
 end

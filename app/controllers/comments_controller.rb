@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   # allow only authenticated user to destroy comments on article
-  http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
+  #http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
 
   def create
     @article = Article.find(params[:article_id])
@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to article_path(@article)
   end
+  
   private
     def comment_params
       params.require(:comment).permit(:commenter, :body)
