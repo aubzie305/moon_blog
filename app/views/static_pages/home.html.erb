@@ -5,3 +5,7 @@
     <%= button_to "Become a Moonie", new_user_reg_path , class: "btn btn-primary", id: "sign_up_btn" %>
   <% end %>
 </div>
+
+<div class = "feed-container">
+  <#%= render partial: "articles/feed", collection: @articles %>
+</div>
