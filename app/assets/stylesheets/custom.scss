@@ -4,6 +4,11 @@
 // Key Colors
 $bg_color: #cc9bc5;
 $fg_text_color: #7f499e;
+$form_color: #e9f5c4;
+$subtitle_color: #f56656;
+
+// Default attributes
+$def_border_radius: 12px;
 
 // Google Fonts
 //@import url(http://fonts.googleapis.com/css?family=Bungee|Baloo+Chettan+2);
@@ -17,6 +22,11 @@ $fg_text_color: #7f499e;
 @font-face {
   font-family: 'baloo';
   src:font-url('BalooChettan2-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'baloo-bold';
+  src:font-url('BalooChettan2-Bold.ttf');
 }
 
 // For responsive font-sizes
@@ -73,6 +83,7 @@ $fg_text_color: #7f499e;
 /* universal */
 body {
   padding-top: 120px;
+  background-color: #debfdd;
 }
 
 section {
@@ -92,7 +103,7 @@ section {
   @include fluid-type(20px, 35px);
 
   overflow: hidden;
-  background: linear-gradient(to right, #c3a1f0, #c3a1f0 50%, $fg_text_color 50%);
+  background: linear-gradient(to right, white, white 50%, $fg_text_color 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -111,6 +122,7 @@ section {
 }
 
 .jumbotron {
+  border-radius: $def_border_radius;
   animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
@@ -120,6 +132,7 @@ section {
 .navbar-right li a{
   font-family: 'baloo';
   color: $fg_text_color;
+  border-radius: $def_border_radius;
   transition-duration: 0.4s;
   bottom: 50px;
   @include fluid-type(10px, 20px);
@@ -127,13 +140,14 @@ section {
 
 .dropdown-menu {
   top: 0px;
+  border-radius: $def_border_radius;
 }
 
 #sign_up_btn {
   font-family: 'baloo';
   background-color: $bg_color;
   color: white;
-  border-radius: 12px;
+  border-radius: $def_border_radius;
   border-color: transparent;
   margin-top: 30px;
   animation: fadein 2s;
@@ -167,17 +181,46 @@ h2, h3, h4, h5, h6, p{
   font-family: 'baloo';
 }
 
-#sign_up_btn_2 {
-  font-family: $baloo;
-  color: $fg_text_color;
-  border-radius: 12px;
+/* Misc */
+
+#btn_2 {
+  font-family: 'baloo-bold';
+  color: $subtitle_color;
+  border-radius: $def_border_radius;
   border-color: transparent;
   @include fluid-type(10px, 24px);
 
   &:hover{
     transition-duration: 0.4s;
-    background-color: white;
-    color: $bg_color;
-    border-color: $bg_color;
   }
+}
+
+.link, .field{
+  font-family: 'baloo';
+  @include fluid-type(10px, 24px);
+}
+
+.subtitle {
+  font-family: 'baloo-bold';
+  color: $subtitle_color;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  @include fluid-type(25px, 60px);
+}
+
+.greeting {
+  font-family: 'bungee';
+  animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+  @include fluid-type(25px, 50px);
+}
+
+.form-group {
+  background-color: $form_color;
+}
+
+.field label{
+  color: $subtitle_color;
 }

@@ -1,0 +1,7 @@
+<div class = "container-fluid greeting">
+  <% if current_user %>
+    Hello again, <%= @user.name %>
+  <% else %>
+    <%= @user.name %>'s Moonie Profile
+  <% end %>
+</div>

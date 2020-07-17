@@ -1,11 +1,12 @@
-<div class= "center jumbotron">
+<div class= "center container jumbotron">
   <h1>The Moon Blog</h1>
   <h2>A blog by the moonies for all the world's other moonies</h2>
   <% if !user_signed_in? %>
-    <%= button_to "Become a Moonie", new_user_reg_path , class: "btn btn-primary", id: "sign_up_btn_1" %>
+    <%= button_to "Become a Moonie", new_user_reg_path , class: "btn btn-primary", id: "sign_up_btn" %>
   <% end %>
 </div>
 
-<div class = "feed-container">
-  <#%= render partial: "articles/feed", collection: @articles %>
+<div class = "container">
+  <%= render partial: "articles/feed", collection: @articles %>
+
 </div>
