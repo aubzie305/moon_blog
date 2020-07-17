@@ -6,11 +6,18 @@ $bg_color: #cc9bc5;
 $fg_text_color: #7f499e;
 
 // Google Fonts
-@import url(http://fonts.googleapis.com/css?family=Bungee|Baloo+Chettan+2);
+//@import url(http://fonts.googleapis.com/css?family=Bungee|Baloo+Chettan+2);
 
 // Font Variables
-$bungee: 'Bungee';
-$baloo: 'Baloo Chettan 2';
+@font-face {
+  font-family: 'bungee';
+  src:font-url('Bungee-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'baloo';
+  src:font-url('BalooChettan2-Regular.ttf');
+}
 
 // For responsive font-sizes
 @mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 420px, $upper-range: 900px) {
@@ -75,7 +82,7 @@ section {
 
 /* Header */
 #logo {
-  font-family: $bungee;
+  font-family: 'bungee';
   color: $fg_text_color;
   transition-duration: 0.4s;
   float: left;
@@ -88,7 +95,7 @@ section {
 }
 
 .navbar-right li a{
-  font-family: $baloo;
+  font-family: 'baloo';
   color: $fg_text_color;
   transition-duration: 0.4s;
   bottom: 50px;
@@ -100,7 +107,7 @@ section {
 }
 
 #sign_up_btn {
-  font-family: $baloo;
+  font-family: 'baloo';
   background-color: $bg_color;
   color: white;
   border-radius: 12px;
@@ -118,7 +125,7 @@ section {
 
 /* typography */
 h1 {
-  font-family: $bungee;
+  font-family: 'bungee';
   @include fluid-type(28px, 80px);
   animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
@@ -127,7 +134,7 @@ h1 {
 }
 
 h2, h3, h4, h5, h6, p{
-  font-family: $baloo;
+  font-family: 'baloo';
   @include fluid-type(20px, 32px);
 }
 

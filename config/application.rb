@@ -17,5 +17,6 @@ module MoonBlog
     # the framework and any gems in your application.
 
     #config.assets.precompile = %w( *.js *.css )
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end
