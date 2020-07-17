@@ -99,7 +99,7 @@ section {
   top: 0px;
 }
 
-#sign_up_btn {
+#sign_up_btn_1 {
   font-family: $baloo;
   background-color: $bg_color;
   color: white;
@@ -119,7 +119,7 @@ section {
 /* typography */
 h1 {
   font-family: $bungee;
-  @include fluid-type(28px, 80px);
+  @include fluid-type(32px, 80px);
   animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
@@ -128,7 +128,25 @@ h1 {
 
 h2, h3, h4, h5, h6, p{
   font-family: $baloo;
+}
+
+/* Registration forms-signup, login */
+.field {
+  font-family: $baloo;
   @include fluid-type(20px, 32px);
 }
 
-/* Misc */
+#sign_up_btn_2 {
+  font-family: $baloo;
+  color: $fg_text_color;
+  border-radius: 12px;
+  border-color: transparent;
+  @include fluid-type(10px, 24px);
+
+  &:hover{
+    transition-duration: 0.4s;
+    background-color: white;
+    color: $bg_color;
+    border-color: $bg_color;
+  }
+}
