@@ -13,13 +13,12 @@ Rails.application.routes.draw do
     post '/users/sign_up', to: 'devise/registrations#create', as: :new_user_reg
   end
   devise_for :users
+  
   resources :moonies
+  resources :users 
+  resources :articles
 
-  resources :users do
-    resources :articles
-  end
-
-  get '/articles/dashboard', to: 'articles#index', as: :dashboard
+  #get '/articles/dashboard', to: 'articles#index', as: :dashboard
 
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'

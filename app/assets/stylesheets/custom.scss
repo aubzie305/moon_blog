@@ -4,7 +4,7 @@
 // Key Colors
 $bg_color: #cc9bc5;
 $fg_text_color: #7f499e;
-$form_color: #e9f5c4;
+$form_color: #daf5f3;
 $subtitle_color: #f56656;
 
 // Default attributes
@@ -200,6 +200,18 @@ h2, h3, h4, h5, h6, p{
   @include fluid-type(10px, 24px);
 }
 
+.link {
+  color: $fg_text_color;
+  &:hover {
+    transition-duration: 0.4s;
+    color: white;
+    &:before, &:after {
+      left: 50%;
+      right: 50%;
+    }
+  }
+}
+
 .subtitle {
   font-family: 'baloo-bold';
   color: $subtitle_color;
@@ -210,6 +222,7 @@ h2, h3, h4, h5, h6, p{
 
 .greeting {
   font-family: 'bungee';
+  color: $subtitle_color;
   animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
@@ -223,4 +236,8 @@ h2, h3, h4, h5, h6, p{
 
 .field label{
   color: $subtitle_color;
+}
+
+.field {
+  right: 0px;
 }

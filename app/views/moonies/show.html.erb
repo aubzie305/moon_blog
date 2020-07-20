@@ -1,7 +1,16 @@
-<div class = "container-fluid greeting">
+<div class = "greeting">
   <% if current_user %>
     Hello again, <%= @user.name %>
   <% else %>
     <%= @user.name %>'s Moonie Profile
+  <% end %>
+</div>
+
+<div class = "container">
+  <div class = "subtitle">Personal Moon Feed</div>
+  <% if @user.articles.any? %>
+    <ul class = "articles">
+      <%= render @articles %>
+    </ul>
   <% end %>
 </div>
