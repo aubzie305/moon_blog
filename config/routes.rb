@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   
   resources :moonies
   resources :users 
-  resources :articles
+  resources :articles, only: [:create, :destroy, :index]
+
+  post 'articles', to: 'articles#create', as: :article_create
 
   #get '/articles/dashboard', to: 'articles#index', as: :dashboard
 
