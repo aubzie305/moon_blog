@@ -1,12 +1,12 @@
 <div class = "greeting">
   <% if current_user %>
     Hello again, <%= @user.name %>
+    <%= render "articles/article_form" %>
   <% else %>
     <%= @user.name %>'s Moonie Profile
   <% end %>
 </div>
 
-<%= render "articles/article_form" %>
 
 <div class = "container">
   <div class = "subtitle">Personal Moon Feed</div>

@@ -1,6 +1,7 @@
+<div class>
 <%= form_with(model: @article, local: true) do |f| %>
   <div class = "field" >
-    <%= f.text_area :title, placeholder: "Title for new article..." %>
+    <%= f.text_field :title, placeholder: "Title for new article..." %>
   </div>
   <div class="field">
     <%= f.text_area :body, placeholder: "Compose new article..." %>
