@@ -1,10 +1,16 @@
-<div class>
-<%= form_with(model: @article, local: true) do |f| %>
+<%= form_with(model: current_user.articles.build , local: true) do |f| %>
   <div class = "field" >
-    <%= f.text_field :title, placeholder: "Title for new article..." %>
+    <%= f.text_field :title, placeholder: "Title for new article...", class: "title" %>
   </div>
   <div class="field">
-    <%= f.text_area :body, placeholder: "Compose new article..." %>
+    <%= f.text_area :body, placeholder: "Compose new article...", class: "body" %>
   </div>
+  <%= render "shared/error_messages", object: f.object %>
   <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+
+<% if flash[:articles_errors] %>
+  <% flash[:articles_errors].each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
 <% end %>

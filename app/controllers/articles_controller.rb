@@ -6,10 +6,11 @@ class ArticlesController < ApplicationController
   def create 
     @article = current_user.articles.build(article_params)
     if @article.save
-      #flash[:success] = "Micropost created!"
-      redirect_to 'moonies/show'
-    else
-      render 'static_pages/home'
+      redirect_to moony_path(@article.user), notice: "New Moony article posted!"
+    else 
+      # flash[:article_errors] = @article.errors.full_messages
+      p @article
+      render "moonies/show", params: { id: @article.user.id }
     end
   end
 
