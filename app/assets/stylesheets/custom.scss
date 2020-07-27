@@ -230,11 +230,11 @@ h2, h3, h4, h5, h6, p{
   @include fluid-type(25px, 50px);
 }
 
-.form-group {
+.form{
   background-color: $form_color;
 }
 
-.field label{
+.field {
   color: $subtitle_color;
 }
 
