@@ -1,17 +1,19 @@
 <div class = "greeting">
   <% if @user == current_user %>
     Hello again, <%= @user.name %>
-    <%= render "articles/article_form" %>
   <% else %>
     <%= @user.name %>'s Moonie Profile
   <% end %>
 </div>
 
+<% if @user == current_user %>
+  <%= render "articles/article_form" %>
+<% end %>
 
-<div class = "container">
-  <div class = "subtitle">Personal Moon Feed</div>
+<div class="container">
+  <div class="subtitle">Personal Moon Feed</div>
   <% if @user.articles.any? %>
-    <ul class = "articles">
+    <ul class="articles">
       <%= render @articles %>
     </ul>
   <% end %>

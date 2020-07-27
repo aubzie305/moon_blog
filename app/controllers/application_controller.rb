@@ -1,12 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :log_info
   before_action :configure_permitted_parameters, if: :devise_controller?
-
-  def log_info 
-    p '*' * 100
-    #p controller 
-    p '*' * 100
-  end
 
   protected 
     def configure_permitted_parameters 

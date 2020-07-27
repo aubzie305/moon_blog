@@ -8,9 +8,8 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to moony_path(@article.user), notice: "New Moony article posted!"
     else 
-      # flash[:article_errors] = @article.errors.full_messages
-      p @article
-      render "moonies/show", params: { id: @article.user.id }
+      flash[:article_errors] = @article.errors.full_messages
+      redirect_to moony_path(@article.user)
     end
   end
 
