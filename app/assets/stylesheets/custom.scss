@@ -2,10 +2,10 @@
 @import "bootstrap";
 
 // Key Colors
-$bg_color: #cc9bc5;
-$fg_text_color: #7f499e;
-$form_color: #daf5f3;
-$subtitle_color: #f56656;
+$fg_text_color: #cc9bc5;
+$bg_color: #7f499e;
+$form_color: #eed5f8;
+$subtitle_color: #6e36af;
 
 // Default attributes
 $def_border_radius: 12px;
@@ -27,6 +27,26 @@ $def_border_radius: 12px;
 @font-face {
   font-family: 'baloo-bold';
   src:font-url('BalooChettan2-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'nunito-light';
+  src:font-url('Nunito-Light.ttf');
+}
+
+@font-face {
+  font-family: 'nunito-regular';
+  src:font-url('Nunito-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'nunito-bold';
+  src:font-url('Nunito-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'fred-one';
+  src:font-url('FredokaOne-Regular.ttf');
 }
 
 // For responsive font-sizes
@@ -79,11 +99,22 @@ $def_border_radius: 12px;
   }
 }
 
+@keyframes animateIn {
+  0% {
+    opacity: 0;
+    transform: scale(.4) translateY(-8px);
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
 //Styles
 /* universal */
 body {
   padding-top: 120px;
-  background-color: #debfdd;
+  background-color: #50315c;
 }
 
 section {
@@ -92,6 +123,16 @@ section {
 
 .center {
   text-align: center;
+}
+
+.white-box {
+  background-color: white;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  width: 100px;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -123,14 +164,10 @@ section {
 
 .jumbotron {
   border-radius: $def_border_radius;
-  animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
 }
 
 .navbar-right li a{
-  font-family: 'baloo';
+  font-family: 'nunito-regular';
   color: $fg_text_color;
   border-radius: $def_border_radius;
   transition-duration: 0.4s;
@@ -150,10 +187,6 @@ section {
   border-radius: $def_border_radius;
   border-color: transparent;
   margin-top: 30px;
-  animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
   @include fluid-type(10px, 24px);
 
   &:hover{
@@ -165,15 +198,9 @@ section {
 }
 
 /* typography */
-h1, h2, h3, h4, h5, h6, p {
-  animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
-}
-
 h1 {
   font-family: 'bungee';
+  color: white;
   @include fluid-type(28px, 80px);
 }
 
@@ -182,6 +209,12 @@ h2, h3, h4, h5, h6, p{
 }
 
 /* Misc */
+.animate-fade {
+  animation: fadein 2.5s;
+    -moz-animation: fadein 2.5s; /* Firefox */
+    -webkit-animation: fadein 2.5s; /* Safari and Chrome */
+    -o-animation: fadein 2.5s; /* Opera */
+}
 
 #btn_2 {
   font-family: 'baloo-bold';
@@ -193,11 +226,6 @@ h2, h3, h4, h5, h6, p{
   &:hover{
     transition-duration: 0.4s;
   }
-}
-
-.link, .field{
-  font-family: 'baloo';
-  @include fluid-type(10px, 24px);
 }
 
 .link {
@@ -213,21 +241,34 @@ h2, h3, h4, h5, h6, p{
 }
 
 .subtitle {
-  font-family: 'baloo-bold';
-  color: $subtitle_color;
+  font-family: 'bungee';
+  color: $fg_text_color;
   text-decoration: underline;
   margin-bottom: 20px;
-  @include fluid-type(25px, 60px);
+  @include fluid-type(25px, 45px);
 }
 
 .greeting {
   font-family: 'bungee';
-  color: $subtitle_color;
-  animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
+  padding: 15px;
+  color: $fg_text_color;
   @include fluid-type(25px, 50px);
+}
+
+.moony-note {
+  font-family: 'baloo-bold';
+  color: white; 
+  @include fluid-type(20px, 30px);
+}
+
+.paginate-bar {
+  padding-left: 20px; 
+}
+
+/* Forms */
+.link, .field{
+  font-family: 'baloo';
+  @include fluid-type(10px, 24px);
 }
 
 .form{
@@ -240,4 +281,102 @@ h2, h3, h4, h5, h6, p{
 
 .field {
   right: 0px;
+}
+
+/* User Info */
+.profile-snippet {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding: 20px; 
+  height: 500px;
+  width: 70%;
+  border-radius: 10px;
+  background-color: $form_color;
+}
+
+.profile-avatar {
+  width: 350px;
+  height: 350px; 
+}
+
+.profile-info {
+  font-family: 'fred-one';
+  padding: 20px; 
+  @include fluid-type(10px, 20px);
+}
+
+/* Articles */
+.articles {
+  list-style: none;
+  padding: 5px 80px ;
+
+  li {
+    margin: 0 0 20px 0;
+    padding: 10px 20px;
+    border-top: 1px solid #e8e8e8;
+    border-radius: 12px;
+    background-color: white;
+    animation-name: animateIn;
+    animation-duration: 350ms;
+    animation-delay: calc(var(--animation-order) * 100ms);
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+  }
+
+  .article-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .article-user {
+    font-family: 'nunito-regular';
+    @include fluid-type(10px, 20px);
+    padding-left: 25px; 
+    padding-top: 0;
+  }
+
+  .article-title {
+    font-family: 'fred-one';
+    @include fluid-type(25px, 40px);
+    padding-left: 25px; 
+  }
+
+  .article-content {
+    font-family: 'nunito-regular';
+    @include fluid-type(15px, 25px);
+    display: block;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    margin-top: 10px; 
+    margin-left: 130px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+  .article-timestamp {
+    font-family: 'nunito-light';
+    color: grey;
+    display: block;
+    margin-left: 15px;
+  }
+
+  .article-links {
+    font-family: 'nunito-light';
+    margin-left: 15px; 
+  }
+}
+
+.title-field, .body-field, .post-btn {
+  border-radius: 15px;
+  font-family: 'baloo';
+  font-size: 1vw;
+}
+
+.post-btn {
+  background-color: #7f499e; 
+  color: white; 
+  border-color: transparent;
 }

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   
-  resources :moonies
+  resources :moonies  
   resources :users 
   resources :articles, only: [:create, :destroy, :index]
   

@@ -1,5 +1,33 @@
-<li id = "article-<%= article.id %>">
-  <span class = "user"><%= link_to article.user.name , moony_path(article.user) %>
-  <span class = "title"><%= article.title%></span>
-  <span class = "body"><%= article.body%> </span>
+<li id="article-<%= article.id %>">
+  <div class="row">
+    <span class="col-xs-6 col-sm-4 article-avatar">
+      <% if article.user.avatar.attached? %>
+        <%= image_tag article.user.avatar , class: "img-rounded article-avatar" %>
+      <% else %>
+        <%= image_tag("pixel_star_purple.png", alt: "Default Avatar", class: "img-rounded article-avatar") %>
+      <% end %>
+    </span>
+    <span class="article-user">
+      <%= link_to article.user.name , moony_path(article.user) %>
+    </span><br>
+    <span class="article-title">
+      <%= article.title %>
+    </span>
+  </div>
+
+  <div class="row">
+    <span class="article-content">
+      <%= article.body %>
+    </span><br>
+
+    <span class="article-timestamp">
+      Published <%= time_ago_in_words(article.created_at) %> ago.
+    </span>
+
+    <span class="article-links">
+      <% if article.user == current_user %>
+        <%= link_to "Delete", article, method: :delete, data: {confirm: "You sure you want to delete this Moony article?"} %>
+      <% end %>
+    </span>
+  </div>
 </li>

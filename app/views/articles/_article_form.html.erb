@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
   <% if !!flash[:article_errors] %>
     <% flash.each do |type, messages| %>
       <div class="alert alert-info">
@@ -9,15 +9,15 @@
     <% end %>
   <% end %>
 
-  <%= form_with(model: @article , local: true, html: { class: "form-horizontal" }) do |f| %>
+  <%= form_with(model: @article , local: true, html: { class: "center form-horizontal" }) do |f| %>
     <div class="form-group" >
-      <%= f.text_field :title, placeholder: "Title for new article...", class: "col-sm-2" %>
+      <%= f.text_field :title, placeholder: " Title...", size: "35", class: "title-field" %>
     </div>
 
     <div class="form-group">
-      <%= f.text_area :body, placeholder: "Compose new article...", class: "col-sm-2" %>
+      <%= f.text_area :body, placeholder: " Compose new article...", size: "40x10", class: "body-field" %>
     </div>
 
-    <%= f.submit "Post", class: "btn btn-primary" %>
+    <%= f.submit "Post Moony Article", class: "btn btn-primary post-btn" %>
   <% end %>
 </div>

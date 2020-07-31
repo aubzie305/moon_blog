@@ -1,5 +1,15 @@
-<h2>Moon Feed</h2>
+<%= render "shared/flash_display" %>
 
-<ul class = "articles">
-  <%= render @articles%>
+<div class="greeting animate-fade">
+  Moon Feed
+</div>
+
+<div class="paginate-bar animate-fade">
+  <%= paginate @articles %>
+</div>
+<ul class="articles">
+  <%= render @articles %>
 </ul>
+<div class="paginate-bar animate-fade">
+ <%= paginate @articles %>
+</div>

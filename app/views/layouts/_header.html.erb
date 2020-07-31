@@ -21,7 +21,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", moony_path(current_user) %>
-              <li><%= link_to "Settings", '#' %>
+              <li><%= link_to "Settings", edit_user_registration_path	 %>
               <li><%= link_to "Log out", destroy_user_session_path, method: :delete, data: {confirm: "Fellow moonie, are you sure you want to log out?"}%></li>
               <li class="divider"></li>
               <li><%= link_to "Contact Sailor Senshii", '#' %></li>

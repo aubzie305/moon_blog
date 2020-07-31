@@ -1,4 +1,6 @@
-<div class = "greeting">
+<%= render "shared/flash_display" %>
+
+<div class = "greeting animate-fade">
   <% if @user == current_user %>
     Hello again, <%= @user.name %>
   <% else %>
@@ -6,15 +8,37 @@
   <% end %>
 </div>
 
-<% if @user == current_user %>
-  <%= render "articles/article_form" %>
-<% end %>
+<div class="row">
+  <div class="col-xs-6 col-sm-4 animate-fade">
+    <%= render "moonies/moony_info" %>
+    <% if @user == current_user %>
+      <%= render "articles/article_form" %>
+    <% end %>
+  </div>
 
-<div class="container">
-  <div class="subtitle">Personal Moon Feed</div>
-  <% if @user.articles.any? %>
-    <ul class="articles">
-      <%= render @articles %>
-    </ul>
-  <% end %>
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    <div class="subtitle animate-fade">
+      Personal Moon Feed
+    </div>
+
+    <% if @user.articles.any? %>
+      <div class="paginate-bar animate-fade">
+        <%= paginate @articles %>
+      </div>
+      <ul class="articles">
+        <%= render @articles %>
+      </ul>
+      <div class="paginate-bar animate-fade">
+        <%= paginate @articles %>
+      </div>     
+    <% else %>
+      <div class="moony-note animate-fade">
+      <% if @user == current_user %>
+        You have no articles yet.
+      <% else %>
+        This moony has no articles yet. 
+      <% end %>
+    <% end %>
+  </div>
 </div>
+

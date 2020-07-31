@@ -1,0 +1,11 @@
+<div class="profile-snippet center-block">
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar , class: "img-responsive img-circle center-block profile-avatar" %>
+  <% else %>
+    <%= image_tag("pixel_star_purple.png", alt: "Default Avatar", class: "img-responsive img-circle center-block profile-avatar") %>
+  <% end %>
+
+  <div class="center profile-info">
+    Moony since <%= @user.created_at.strftime("%b %d, %Y") %>
+  </div>
+</div>
