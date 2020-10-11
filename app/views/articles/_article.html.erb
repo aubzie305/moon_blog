@@ -28,6 +28,10 @@
       <% if article.user == current_user %>
         <%= link_to "Delete", article, method: :delete, data: {confirm: "You sure you want to delete this Moony article?"} %>
       <% end %>
-    </span>
+    </span><br>
+  </div>
+
+  <div class="container-fluid comment-box">
+    <%= render "comments/comment_form" %>
   </div>
 </li>

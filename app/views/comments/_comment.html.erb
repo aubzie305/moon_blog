@@ -1,15 +1,31 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
+<li id="comment-<%= comment.id %>">
+  <div class="row">
+    <span class="col-xs-6 col-sm-4 comment-avatar">
+      <% if comment.user.avatar.attached? %>
+        <%= image_tag comment.user.avatar , class: "img-rounded comment-avatar" %>
+      <% else %>
+        <%= image_tag("pixel_star_purple.png", alt: "Default Avatar", class: "img-rounded comment-avatar") %>
+      <% end %>
+    </span>
 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
+    <span class="comment-user">
+      <%= link_to comment.user.name , moony_path(comment.user) %>
+    </span><br>
+    
+    <div class="row">
+      <span class="comment-content">
+        <%= comment.body %>
+      </span><br>
 
-<div>
-  <!--The [comment.article, comment] portion would be equivalent to article_comment_path(comment.article, comment)-->
-  <%= link_to "Delete Comment", [comment.article, comment], method: :delete, 
-      data: {confirm: "Are you sure you want to delete this comment?"}%>
-</div>
+      <span class="comment-timestamp">
+        Commented <%= time_ago_in_words(comment.created_at) %> ago.
+      </span>
+
+      <span class="comment-links"> 
+        <% if comment.user == current_user %>
+          <%= link_to "Delete comment", comment, method: :delete, data: {confirm: "You sure you want to delete this comment?"} %>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</li>

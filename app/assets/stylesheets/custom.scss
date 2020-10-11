@@ -380,3 +380,22 @@ h2, h3, h4, h5, h6, p{
   color: white; 
   border-color: transparent;
 }
+
+/* Comments */
+.comment-box {
+  background-color: rgba(228, 207, 21, 0.644); 
+  border-radius: 12px; 
+  width: 800px; 
+}
+
+.comment-body, .comment-button{
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  margin-left: 10px; 
+}
+
+.comment-avatar {
+  margin-top: 10px; 
+  width: 60px; 
+  height: 60px;
+}
